@@ -3,7 +3,7 @@
 
 WORKING_DIR="/var/lib/ddnss"
 LOG_FOLDER="/var/log/ddnss"
-LOG_FILE=&LOG_FOLDER/ddnss-update.log
+LOG_FILE=$LOG_FOLDER/ddnss-update.log
 mkdir -p $LOG_FOLDER
 #Read Config File
 . ddnss-update.rc
