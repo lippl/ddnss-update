@@ -1,9 +1,12 @@
 #!/bin/bash
 
 
-WORKING_DIR="/var/lib/ddnss/"
-LOG_FILE=/var/log/ddnss/ddnss-update.log
-. /etc/ddnss/ddnss-update.rc
+WORKING_DIR="/var/lib/ddnss"
+LOG_FOLDER="/var/log/ddnss"
+LOG_FILE=&LOG_FOLDER/ddnss-update.log
+mkdir -p $LOG_FOLDER
+#Read Config File
+. ddnss-update.rc
 
 if [ -z "$FORCE_UPDATE" ];then
   FORCE_UPDATE=86400
