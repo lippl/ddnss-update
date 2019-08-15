@@ -1,0 +1,2 @@
+#crontab example to check for new IP every 5 Minutes
+*/5  *  *   *   *        sudo bash ddnss-update
