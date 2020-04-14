@@ -1,8 +1,24 @@
-KEYAUTH=""
-HOSTNAME=""
+#### *** REQUIRED SETTINGS ***
+KEYAUTH="REPLACE_WITH_YOUR_KEY"
+HOSTNAME="REPLACE_WITH_YOUR_HOSTNAME"
 
+#### *** OPTIONAL SETTINGS ***
+### FORCE_UPDATE
 # Some providers do not assign new ipaddresses
 # on a regular base.
 # This is the maximum time in seconds to
 # force an update, even if there was no change.
-FORCE_UPDATE=86400
+#
+# FORCE_UPDATE=86400
+#
+### FILES AND DIRECTORIES
+#
+# WORKING_DIR=/var/lib/ddnss
+# LOG_FOLDER=/var/log/ddnss
+# LOG_FILE=ddnss-update.log
+#
+### DEFAULT URL's
+#
+# IPV4_URL=https://ip4.ddnss.de/meineip.php
+# IPV6_URL=https://ip6.ddnss.de/meineip.php
+# UPDATE_URL=https://ddnss.de/upd.php
