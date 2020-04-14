@@ -3,7 +3,7 @@ Description=ddnss automatic update
 
 [Timer]
 OnBootSec=1m
-OnUnitInactiveSec=1m
+OnUnitInactiveSec=10m
 
 [Install]
 WantedBy=basic.target

@@ -2,6 +2,7 @@
 Description=ddnss automatic update
 
 [Service]
-User=ddnss
+# User=ddnss
+User=root
 Type=oneshot
 ExecStart=/usr/bin/ddnss-update

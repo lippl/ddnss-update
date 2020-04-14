@@ -4,7 +4,7 @@ HOSTNAME="REPLACE_WITH_YOUR_HOSTNAME"
 
 #### *** OPTIONAL SETTINGS ***
 ### FORCE_UPDATE
-# Some providers do not assign new ipaddresses
+# Some providers do not assign new ip addresses
 # on a regular base.
 # This is the maximum time in seconds to
 # force an update, even if there was no change.
