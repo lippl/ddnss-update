@@ -18,6 +18,10 @@ LOG_FILE=$LOG_FOLDER/$LOG_FILE
 [ -z "$IPV6_URL" ] && IPV6_URL=https://ip6.ddnss.de/meineip.php
 [ -z "$UPDATE_URL" ] && UPDATE_URL=https://ddnss.de/upd.php
 
+# check if required parameters are set
+[ -z "$KEYAUTH" ] && echo "KEYAUTH not set" && exit 1
+[ -z "$HOSTNAME" ] && echo "HOSTNAME not set" && exit 1
+
 function logmsg {
   echo "$CURRENT_DATE - $@" >> $LOG_FILE
 }
