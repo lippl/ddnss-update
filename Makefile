@@ -1,5 +1,6 @@
 PREFIX=$(DESTDIR)/usr
 INSTALL=/usr/bin/install
+SYSTEMCTL=/bin/systemctl
 SYSTEMD_DIR ?= /usr/lib/systemd/system
 LOG_FOLDER=/var/log/ddnss
 WORKING_DIR=/var/lib/ddnss
@@ -14,11 +15,14 @@ install:
 	[ -d $(DESTDIR)$(SYSTEMD_DIR) ] || mkdir -p $(DESTDIR)$(SYSTEMD_DIR)
 	$(INSTALL) -m 644 dist/ddnss-update.service $(DESTDIR)$(SYSTEMD_DIR)/ddnss-update.service
 	$(INSTALL) -m 644 dist/ddnss-update.timer $(DESTDIR)$(SYSTEMD_DIR)/ddnss-update.timer
+	$(SYSTEMCTL) daemon-reload
+	$(SYSTEMCTL) enable --now ddnss-update.timer
 
 uninstall:
 	rm -ri $(DESTDIR)/etc/ddnss
 	rm -rf $(DESTDIR)/$(LOG_FOLDER)
 	rm -rf $(DESTDIR)/$(WORKING_DIR)
 	rm -rf $(PREFIX)/bin/ddnss-update
+	$(SYSTEMCTL)/lib/systemd/systemd disable ddnss-update.timer
 	rm -rf $(DESTDIR)$(SYSTEMD_DIR)/ddnss-update.service
 	rm -rf $(DESTDIR)$(SYSTEMD_DIR)/ddnss-update.timer
