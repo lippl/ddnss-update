@@ -1,0 +1,7 @@
+/var/log/ddnss-update/*.log {
+        rotate 1
+        weekly
+        missingok
+        notifempty
+        nodateext
+}
